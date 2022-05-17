@@ -1,0 +1,16 @@
+---
+- name: update web services
+  hosts: web
+  become: yes
+
+  tasks: 
+  - name: ensure git installed
+    package:
+      name: git
+      state: present
+
+  - name: ensure ecomm deployed
+    git:
+      dest: /var/www/html
+      repo: https://github.com/SrikanthJakkaslokam/ecomm.git
+...

@@ -1,0 +1,10 @@
+---
+- name: update web services
+  hosts: web
+
+  tasks: 
+  - name: ensure directory n1 is created
+    file:
+      path: /home/ec2-user/sri-dir
+      state: directory
+...

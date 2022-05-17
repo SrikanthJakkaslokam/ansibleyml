@@ -1,0 +1,17 @@
+---
+- name: update web services
+  hosts: web
+  become: yes
+
+  tasks:
+        
+  - name: ensure config updated
+    copy:
+      src: httpd.conf
+      dest: /etc/httpd/conf/httpd.conf
+
+  - name: restart HTTPD
+    service:
+      name: httpd
+      state: restarted    
+...
